@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
- 
+ import "./Users.css"
 const UsersList = () => {
 const urlApi = "https://randomuser.me/api/?results=5"
 const [users, setUsers] = useState([])
@@ -13,7 +13,15 @@ useEffect(() => {
 return(
 <div>
     <h1>Listado: </h1>
-    <ul> {users.map((user, index) => <li key={index}>{user.name.first}</li>)}</ul>
+    
+    <ul> {users.map((user, index) => <li key={index}><div class="card">
+      <div class="content">
+        <div class="nombre">{user.name.first}</div>
+      </div>
+        <button>
+          Más información
+        </button>
+  </div></li>)}</ul>
 </div>
 )}
 export default UsersList
