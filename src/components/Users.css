@@ -1,56 +1,120 @@
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 260px;
-    padding: 20px 1px;
-    margin: 10px 0;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.4);
-    border-radius: 10px;
-    background-color: white;
-  }
-  
-  .content {
-    padding: 20px;
-  }
-  li{
-    
-    list-style: none;
-  }
-  
-  .content .nombre {
-    margin-top: 10px;
-    font-size: 14px;
-  }
-  ul{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-  }
-  
-  button { 
-    border: none;
-    outline: none;
-    cursor: pointer;
-    color: rgb(255 255 255);
-    font-size: .75rem;
-    padding: 0.55rem 1.0rem;
-    font-size: 80%;
-    background-color: rgb(0 0 0);
-    border-radius: 0.5rem;
-    width: 90%;
-    transition: all 0.1 ease-in-out;
-  }
-  button:hover{
-    transform: scale(10rem);
-  }
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 260px;
+  padding: 20px 1px;
+  margin: 10px 0;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -4px rgba(0,0,0,.4);
+  border-radius: 10px;
+  background-color: white;
+}
+.contenidoUsuario {
+  padding: 20px;
+}
 
+li {
+  list-style: none;
+}
 
+.contenidoUsuario .nombre {
+  margin-top: 10px;
+  font-size: 14px;
+}
 
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
 
+button { 
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: rgb(255 255 255);
+  font-size: 0.75rem;
+  padding: 0.55rem 1.0rem;
+  background-color: rgb(0 0 0);
+  border-radius: 0.5rem;
+  width: 90%;
+  transition: all 0.1s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos para la superposición del modal */
+.superposicion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+}
+img{
+  border-radius: 100%;
+}
+
+.superposicion.aparecer {
+  animation: aparecer 0.5s forwards;
+}
+
+.superposicion.desaparecer {
+  animation: desaparecer 0.5s forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@keyframes desaparecer {
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* Estilos para el contenido del modal */
+.contenidoModal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 18rem;
+  gap: 1vw;
   
-  
+}
+.contenidoModal button{
+  padding: 0.7rem;
+  font-size: 0.85rem;
+  margin-top: 3rem;
+}
+.contenidoModal button:hover{
+  background-color: brown;
+}
+
+button:hover{
+  background-color:rgb(30, 88, 196);
+}
